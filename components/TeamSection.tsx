@@ -1,74 +1,68 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Twitter, Linkedin, ExternalLink } from "lucide-react";
-
-const managers = [
-    {
-        name: "Raghav Chaudhary",
-        role: "Founder, Tiger Assets",
-        desc: "An alumnus of LLIM, Raghav has served over 1,500 investors. He specializes in investment banking and fund management with a digital presence of 70,000+ followers on X.",
-        highlights: ["1,500+ Investors", "70k+ Finfluencer", "Lala Lajpatrai Alumnus"],
-        twitter: "https://twitter.com"
-    },
-    {
-        name: "Anshul Mittal",
-        role: "Fund Manager",
-        desc: "Anshul has played a pivotal role in scaling a leading PMS firm to over ₹800 crore in AUM. He specializes in GARP (Growth at a Reasonable Price) strategies.",
-        highlights: ["₹800cr+ AUM Track Record", "GARP Specialist", "Small-Cap Expert"],
-        linkedin: "https://linkedin.com"
-    }
-];
 
 export default function TeamSection() {
     return (
-        <section id="team" className="py-20 md:py-32 px-4 md:px-6 bg-brand-dark overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-20 gap-8">
-                    <div className="max-w-2xl text-center md:text-left mx-auto md:mx-0">
-                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-                            The Minds <br className="hidden sm:block" /> Behind the <span className="text-brand-orange">Alpha</span>
-                        </h2>
-                        <p className="text-lg md:text-xl text-zinc-500 font-medium">
-                            Blending institutional-grade rigour with a modern, tech-enabled research execution style.
-                        </p>
-                    </div>
-                </div>
+        <section id="team" className="py-16 md:py-20 bg-accent-cream relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="relative lg:col-span-5"
+                    >
+                        <div className="absolute -top-4 -left-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                        <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                            <img alt="Portrait of Raghav Chaudhary, Founder of Tiger Assets" className="w-full h-auto object-cover aspect-square md:aspect-[4/5] object-top" src="/raghav.jpg" />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5 md:p-8 pt-12 md:pt-16">
+                                <p className="text-white font-serif italic text-lg md:text-2xl leading-snug">&quot;Our primary duty is the preservation of capital, followed by its consistent growth.&quot;</p>
+                                <p className="text-orange-200 text-xs md:text-sm mt-3 md:mt-4 font-bold tracking-wide uppercase">— Raghav Chaudhary, Founder</p>
+                            </div>
+                        </div>
+                    </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-10">
-                    {managers.map((m, i) => (
-                        <motion.div
-                            key={m.name}
-                            initial={{ opacity: 0, x: i === 0 ? -30 : 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="p-12 rounded-[40px] bg-zinc-900/50 border border-white/10 hover:border-brand-orange/30 transition-all group"
-                        >
-                            <div className="flex justify-between items-start mb-10">
-                                <div className="w-24 h-24 rounded-3xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-4xl font-black text-brand-orange">
-                                    {m.name[0]}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="lg:col-span-7"
+                    >
+                        <h2 className="text-slate-900 font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-2">Raghav Chaudhary</h2>
+                        <p className="text-primary font-bold tracking-wider uppercase text-sm mb-6 inline-block bg-orange-50 px-3 py-1 rounded-full border border-orange-100">Founder, Tiger Assets</p>
+
+                        <div className="prose prose-slate max-w-none mb-8">
+                            <p className="text-slate-600 text-lg leading-relaxed mb-4">
+                                Raghav Chaudhary is the visionary Founder of Tiger Assets. Under his leadership, the Mumbai-based financial services firm has rapidly grown, proudly serving over <strong>1,500 investors</strong> in the past 5 years.
+                            </p>
+                            <p className="text-slate-600 text-lg leading-relaxed">
+                                An alumnus of the Lala Lajpatrai Institute of Management, Raghav specializes in investment banking and fundraising, having successfully closed more than a dozen pre and post-listing transactions. He is known for combining rigorous, data-driven research with ground-level validation.
+                            </p>
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="flex flex-col gap-3 p-5 rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-md transition-all group">
+                                <div className="size-10 bg-orange-50 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                                    <span className="material-symbols-outlined text-[20px]">campaign</span>
                                 </div>
-                                <div className="flex gap-4">
-                                    {m.twitter && <Twitter className="text-zinc-600 hover:text-brand-orange cursor-pointer transition-colors" />}
-                                    {m.linkedin && <Linkedin className="text-zinc-600 hover:text-brand-orange cursor-pointer transition-colors" />}
-                                    <ExternalLink className="text-zinc-600 hover:text-white cursor-pointer transition-colors" />
+                                <div>
+                                    <h3 className="font-bold text-slate-900 mb-1.5 text-base">Recognized Finfluencer</h3>
+                                    <p className="text-sm font-medium text-slate-600 leading-relaxed">With 70,000+ followers on X, Raghav regularly shares actionable insights on equity markets.</p>
                                 </div>
                             </div>
 
-                            <h3 className="text-3xl font-black text-white mb-2">{m.name}</h3>
-                            <div className="text-brand-orange font-bold uppercase tracking-widest text-sm mb-6">{m.role}</div>
-
-                            <p className="text-zinc-400 mb-10 leading-relaxed">{m.desc}</p>
-
-                            <div className="flex flex-wrap gap-3">
-                                {m.highlights.map(h => (
-                                    <span key={h} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-zinc-300">
-                                        {h}
-                                    </span>
-                                ))}
+                            <div className="flex flex-col gap-3 p-5 rounded-2xl bg-white shadow-sm border border-slate-200 hover:shadow-md transition-all group">
+                                <div className="size-10 bg-orange-50 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                                    <span className="material-symbols-outlined text-[20px]">handshake</span>
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-slate-900 mb-1.5 text-base">Strategic Mentorship</h3>
+                                    <p className="text-sm font-medium text-slate-600 leading-relaxed">He actively mentors founders to navigate markets and build long-term value.</p>
+                                </div>
                             </div>
-                        </motion.div>
-                    ))}
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

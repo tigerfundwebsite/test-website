@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { SanityLive } from "@/sanity/lib/live";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Tiger Assets | Engineering Wealth with Integrity",
-  description: "Tiger Assets is an elite investment firm focusing on PMS and Fixed Income strategies for HNIs and UHNIs.",
+  title: "SRE Tiger PMS | Institutional Wealth",
+  description: "Institutional-grade wealth creation focusing on India's growth story. Catering exclusively to HNI & UHNI investors.",
   icons: {
     icon: "/favicon.ico",
   }
@@ -28,9 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-brand-dark text-white`}>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
+      <body className={`${manrope.variable} ${playfairDisplay.variable} font-display antialiased bg-white text-slate-800 overflow-x-hidden`}>
         <Navbar />
         {children}
+        <SanityLive />
       </body>
     </html>
   );

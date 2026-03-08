@@ -1,114 +1,158 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, TrendingUp, ShieldCheck, Zap } from "lucide-react";
-import InvestmentStats from "./InvestmentStats";
-
-const features = [
-    {
-        icon: <TrendingUp className="w-6 h-6 text-brand-orange" />,
-        title: "Structural Growth",
-        desc: "Focusing on sectors with multi-year policy support and structural demand tailwinds."
-    },
-    {
-        icon: <Zap className="w-6 h-6 text-brand-orange" />,
-        title: "High Conviction",
-        desc: "A concentrated portfolio of 15-20 stocks, straddling the entire market cap curve."
-    },
-    {
-        icon: <ShieldCheck className="w-6 h-6 text-brand-orange" />,
-        title: "Risk Mitigation",
-        desc: "Multi-factor risk management matrix with strict sell disciplines and governance filters."
-    }
-];
 
 export default function PMSSection() {
     return (
-        <section id="pms" className="py-32 px-6 bg-brand-dark overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row gap-20 items-center mb-20">
-                    <motion.div
-                        className="flex-1"
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-widest mb-6">
-                            <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
-                            Equity Portfolio
+        <div id="pms">
+            <section className="py-20 bg-background-light">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+                        <div className="max-w-3xl">
+                            <span className="text-primary font-bold tracking-wider uppercase text-sm bg-orange-50 px-4 py-1.5 rounded-full border border-orange-100 mb-4 inline-block">Methodology</span>
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-[1.1] mb-6 mt-4">Investment Philosophy</h2>
+                            <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">A balanced approach to constructing a resilient portfolio capable of withstanding market cycles.</p>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-                            Tiger PMS: Investing in <span className="text-brand-orange">Emerging Leaders</span>
-                        </h2>
-                        <p className="text-xl text-zinc-400 mb-12 leading-relaxed max-w-xl">
-                            Our flagship Portfolio Management Service combines bottom-up research with a robust, process-driven framework to target superior risk-adjusted returns.
-                        </p>
+                        <div className="hidden md:block w-32 h-1 bg-primary"></div>
+                    </div>
 
-                        <div className="space-y-6">
-                            {features.map((f, i) => (
-                                <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
-                                    <div className="mt-1">{f.icon}</div>
-                                    <div>
-                                        <h4 className="font-bold text-white mb-1">{f.title}</h4>
-                                        <p className="text-zinc-500 text-sm">{f.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        className="flex-1 relative w-full"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        {/* Dashboard Mockup - Mobile Native Style */}
-                        <div className="relative z-10 p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] bg-zinc-900 border border-white/10 shadow-2xl overflow-hidden min-h-[400px] flex flex-col">
-                            <div className="flex items-center justify-between mb-8">
-                                <div className="h-10 w-32 bg-white/5 rounded-xl border border-white/10 flex items-center px-3 gap-2">
-                                    <div className="w-4 h-1 bg-brand-orange rounded-full" />
-                                    <div className="w-12 h-1 bg-white/10 rounded-full" />
-                                </div>
-                                <div className="h-10 w-10 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center">
-                                    <div className="w-5 h-5 rounded-md bg-brand-orange/40" />
-                                </div>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6">
+                                <span className="material-symbols-outlined text-[28px]">anchor</span>
                             </div>
+                            <h3 className="text-xl font-bold text-slate-900 mb-3">Core Portfolio</h3>
+                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium">
+                                Stable, high-quality businesses with predictable cash flows. These compounders form the bedrock of the portfolio, ensuring stability during volatility.
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                                    <span className="size-1.5 rounded-full bg-emerald"></span> Large Cap Bias
+                                </li>
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                                    <span className="size-1.5 rounded-full bg-emerald"></span> Low Beta
+                                </li>
+                            </ul>
+                        </motion.div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                                <div className="p-6 rounded-[24px] bg-brand-orange text-black flex flex-col justify-between h-32">
-                                    <div className="text-[10px] font-black uppercase tracking-tighter opacity-60">Real-time Alpha</div>
-                                    <div className="text-4xl font-black leading-none">+25.4%</div>
-                                </div>
-                                <div className="hidden sm:flex p-6 rounded-[24px] bg-zinc-800 border border-white/10 text-white flex flex-col justify-between h-32">
-                                    <div className="text-[10px] font-black uppercase tracking-tighter text-zinc-500">Benchmark</div>
-                                    <div className="text-4xl font-black leading-none text-zinc-300">NIFTY</div>
-                                </div>
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all relative z-10 ring-2 ring-orange-100 md:-translate-y-4">
+                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6">
+                                <span className="material-symbols-outlined text-[28px]">rocket_launch</span>
                             </div>
+                            <h3 className="text-xl font-bold text-slate-900 mb-3">Catalyst Plays</h3>
+                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium">
+                                Companies undergoing special situations: demergers, management change, or cyclical upturns. These provide the &apos;alpha&apos; kicker to returns.
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                                    <span className="size-1.5 rounded-full bg-primary"></span> Mid &amp; Small Cap
+                                </li>
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                                    <span className="size-1.5 rounded-full bg-primary"></span> High Growth
+                                </li>
+                            </ul>
+                        </motion.div>
 
-                            <div className="space-y-3 mt-auto">
-                                {[1, 2, 3].map(i => (
-                                    <div key={i} className="h-14 w-full bg-white/5 rounded-[20px] flex items-center justify-between px-5 border border-white/5">
-                                        <div className="flex gap-4 items-center">
-                                            <div className="w-8 h-8 rounded-xl bg-brand-orange/20 border border-brand-orange/20" />
-                                            <div className="h-2 w-20 md:w-32 bg-white/10 rounded-full" />
-                                        </div>
-                                        <div className="h-2 w-10 md:w-16 bg-brand-orange/40 rounded-full" />
-                                    </div>
-                                ))}
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6">
+                                <span className="material-symbols-outlined text-[28px]">shield</span>
                             </div>
-                        </div>
-
-                        {/* Glowing Rings */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-brand-orange/10 rounded-full animate-spin-slow pointer-events-none" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-white/5 rounded-full pointer-events-none" />
-                    </motion.div>
+                            <h3 className="text-xl font-bold text-slate-900 mb-3">Capital Protection</h3>
+                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium">
+                                A rigorous exit framework prevents emotional decision making. We are quick to cut losses when the investment thesis breaks.
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                                    <span className="size-1.5 rounded-full bg-slate-700"></span> Stop Loss Protocols
+                                </li>
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                                    <span className="size-1.5 rounded-full bg-slate-700"></span> Cash Calls
+                                </li>
+                            </ul>
+                        </motion.div>
+                    </div>
                 </div>
+            </section>
 
-                <InvestmentStats />
-            </div>
-        </section>
+            <section className="py-24 bg-slate-50 relative border-t border-slate-200">
+                <div className="absolute inset-0 bg-wave-pattern opacity-30 pointer-events-none"></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-16">
+                        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 md:mb-10 text-slate-900 tracking-tight leading-[1.1]">Making Volatility <br className="hidden sm:block" /> Survivable</h2>
+                            <div className="space-y-10">
+                                <div className="flex gap-5">
+                                    <div className="flex-shrink-0 size-14 rounded-xl bg-white flex items-center justify-center border border-orange-100 shadow-sm">
+                                        <span className="material-symbols-outlined text-primary text-[28px]">gavel</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-slate-900 mb-2">Governance First</h3>
+                                        <p className="text-slate-600 text-base font-medium leading-relaxed">We reject ~80% of ideas purely on governance filters. We look for clean balance sheets and shareholder-friendly management.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-5">
+                                    <div className="flex-shrink-0 size-14 rounded-xl bg-white flex items-center justify-center border border-orange-100 shadow-sm">
+                                        <span className="material-symbols-outlined text-primary text-[28px]">water_drop</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-slate-900 mb-2">Liquidity Discipline</h3>
+                                        <p className="text-slate-600 text-base font-medium leading-relaxed">We ensure minimum daily trading volumes to avoid impact costs during entry and exit.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-5">
+                                    <div className="flex-shrink-0 size-14 rounded-xl bg-white flex items-center justify-center border border-orange-100 shadow-sm">
+                                        <span className="material-symbols-outlined text-primary text-[28px]">pie_chart</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-slate-900 mb-2">Diversification Limits</h3>
+                                        <p className="text-slate-600 text-base font-medium leading-relaxed">Maximum sector exposure capped at 30%. Single stock exposure capped at 10%.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                            <div className="bg-white rounded-2xl p-8 md:p-10 border border-slate-200 shadow-lg">
+                                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-900">
+                                    <div className="size-10 rounded-xl bg-orange-50 text-primary flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-[20px]">monitoring</span>
+                                    </div>
+                                    Portfolio Snapshot
+                                </h3>
+                                <div className="space-y-8">
+                                    <div>
+                                        <div className="flex justify-between text-base font-bold mb-3">
+                                            <span className="text-slate-600">Number of Stocks</span>
+                                            <span className="text-primary">15 - 20</span>
+                                        </div>
+                                        <div className="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
+                                            <div className="h-full w-2/3 bg-primary rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4 pt-4">
+                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Market Cap Bias</p>
+                                            <p className="font-bold text-xl text-slate-900">Multi-Cap</p>
+                                        </div>
+                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Benchmark</p>
+                                            <p className="font-bold text-xl text-slate-900">BSE 500</p>
+                                        </div>
+                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Strategy</p>
+                                            <p className="font-bold text-xl text-slate-900">Long Only</p>
+                                        </div>
+                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Min Investment</p>
+                                            <p className="font-bold text-xl text-slate-900">₹ 50 Lakhs</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 }

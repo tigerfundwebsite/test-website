@@ -1,20 +1,65 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 
-const navLinks = [
-    { name: "Tiger PMS", href: "#pms" },
-    { name: "Fixed Income", href: "#fip" },
-    { name: "TIGER Framework", href: "#framework" },
-    { name: "Team", href: "#team" },
+const navGroups = [
+    {
+        name: "Approaches",
+        links: [
+            { name: "Portfolio", href: "/portfolio" },
+            { name: "Framework", href: "/framework" },
+            { name: "Strategy", href: "/strategy" },
+            { name: "Case Studies", href: "/case-studies" },
+        ]
+    },
+    {
+        name: "Intelligence",
+        links: [
+            { name: "Insights", href: "/insights" },
+            { name: "Market", href: "/market" },
+            { name: "Tools", href: "/tools" },
+            { name: "Lab", href: "/lab" },
+        ]
+    },
+    {
+        name: "The Firm",
+        links: [
+            { name: "Manifesto", href: "/manifesto" },
+            { name: "Letters", href: "/letters" },
+            { name: "History", href: "/the-market-journey" },
+            { name: "Careers", href: "/careers" },
+        ]
+    },
+    {
+        name: "Connect",
+        links: [
+            { name: "Events", href: "/events" },
+            { name: "Media", href: "/media" },
+            { name: "Learn", href: "/learn" },
+            { name: "Resources", href: "/resources" },
+            { name: "Journey", href: "/journey" },
+        ]
+    }
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const [hidden, setHidden] = useState(false);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious();
+        if (previous !== undefined && latest > previous && latest > 150) {
+            setHidden(true);
+        } else if (previous !== undefined && latest < previous) {
+            setHidden(false);
+        }
+    });
 
     // Prevent scroll when menu is open
     useEffect(() => {
@@ -26,65 +71,108 @@ export default function Navbar() {
     }, [isOpen]);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-[100] flex justify-center p-4 md:p-6">
-            <motion.div
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "circOut" }}
-                className="w-full max-w-6xl flex items-center justify-between px-6 md:px-8 py-3 md:py-4 glass-nav rounded-full border border-white/10"
+        <>
+            <motion.header
+                variants={{
+                    visible: { y: 0, opacity: 1 },
+                    hidden: { y: "-150%", opacity: 0 }
+                }}
+                animate={hidden ? "hidden" : "visible"}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white/90 backdrop-blur-xl border border-slate-200 shadow-xl shadow-slate-200/50 rounded-full px-4 sm:px-6"
             >
-                <div className="flex items-center gap-2">
-                    <Image
-                        src="/Tiger Logo.svg"
-                        alt="Tiger Assets"
-                        width={100}
-                        height={28}
-                        className="h-6 md:h-8 w-auto brightness-0 invert"
-                    />
-                </div>
+                <div className="flex items-center justify-between h-20">
+                    {/* Left: Logo */}
+                    <div className="flex items-center gap-2 flex-1">
+                        <Link href="/">
+                            <Image
+                                src="/Tiger Logo.svg"
+                                alt="SRE Tiger PMS"
+                                width={180}
+                                height={50}
+                                className="h-10 md:h-12 w-auto"
+                                priority
+                            />
+                        </Link>
+                    </div>
 
-                {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium text-zinc-400 hover:text-brand-orange transition-colors"
+                    {/* Desktop Navigation */}
+                    <nav className="hidden lg:flex items-center gap-2 justify-center flex-none">
+                        {navGroups.map((group) => (
+                            <div
+                                key={group.name}
+                                className="relative"
+                                onMouseEnter={() => setActiveDropdown(group.name)}
+                                onMouseLeave={() => setActiveDropdown(null)}
+                            >
+                                <button className={`flex items-center gap-1 px-4 py-2 rounded-full text-sm font-bold tracking-wide transition-colors ${activeDropdown === group.name ? 'text-primary bg-orange-50' : 'text-slate-600 hover:text-primary'}`}>
+                                    {group.name}
+                                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === group.name ? 'rotate-180' : ''}`} />
+                                </button>
+
+                                <AnimatePresence>
+                                    {activeDropdown === group.name && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                            transition={{ duration: 0.15, ease: "easeOut" }}
+                                            className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white border border-slate-200 shadow-2xl rounded-2xl p-2 flex flex-col gap-1 z-50"
+                                        >
+                                            {/* Invisible bridge to prevent mouseleave when moving from button to dropdown */}
+                                            <div className="absolute -top-4 left-0 w-full h-4 bg-transparent" />
+
+                                            {group.links.map((link) => (
+                                                <Link
+                                                    key={link.name}
+                                                    href={link.href}
+                                                    onClick={() => setActiveDropdown(null)}
+                                                    className="px-4 py-3 rounded-xl text-slate-700 font-bold text-sm hover:bg-orange-50 hover:text-primary transition-colors flex items-center justify-between group/link"
+                                                >
+                                                    {link.name}
+                                                    <span className="material-symbols-outlined text-[16px] opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all font-bold">arrow_forward</span>
+                                                </Link>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        ))}
+                    </nav>
+
+                    {/* Right: Actions */}
+                    <div className="hidden lg:flex items-center gap-4 flex-1 justify-end">
+                        <button className="text-slate-600 hover:text-primary font-bold text-sm">Login</button>
+                        <Link href="/portfolio-review">
+                            <button className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5 transform">
+                                Get Free Audit
+                            </button>
+                        </Link>
+                    </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <div className="lg:hidden flex border border-slate-200 rounded-full bg-slate-50 p-2">
+                        <button
+                            className="text-slate-700 relative flex items-center justify-center p-1"
+                            onClick={() => setIsOpen(!isOpen)}
                         >
-                            {link.name}
-                        </a>
-                    ))}
+                            <AnimatePresence mode="wait">
+                                {isOpen ? (
+                                    <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
+                                        <X className="w-5 h-5" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
+                                        <Menu className="w-5 h-5" />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </button>
+                    </div>
                 </div>
+            </motion.header>
 
-                <div className="flex items-center gap-4">
-                    <a
-                        href="#contact"
-                        className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-brand-orange text-black rounded-full text-sm font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95"
-                    >
-                        Request Access
-                        <ArrowUpRight className="w-4 h-4" />
-                    </a>
-
-                    <button
-                        className="p-2 text-white relative z-[110]"
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        <AnimatePresence mode="wait">
-                            {isOpen ? (
-                                <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                                    <X className="w-6 h-6" />
-                                </motion.div>
-                            ) : (
-                                <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} className="md:hidden">
-                                    <Menu className="w-6 h-6" />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </button>
-                </div>
-            </motion.div>
-
-            {/* Premium Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -92,42 +180,50 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: "-100%" }}
                         transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
-                        className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-[105] flex flex-col justify-center px-10 md:hidden"
+                        className="fixed inset-0 top-0 left-0 w-screen h-[100dvh] bg-slate-50 z-[49] flex flex-col px-6 lg:hidden pt-36 pb-12 overflow-y-auto"
                     >
-                        <div className="flex flex-col gap-8">
-                            {navLinks.map((link, i) => (
-                                <motion.a
-                                    key={link.name}
-                                    href={link.href}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.2 + i * 0.1 }}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-5xl font-black text-white hover:text-brand-orange transition-colors"
+                        <div className="flex flex-col gap-10">
+                            {navGroups.map((group, i) => (
+                                <motion.div
+                                    key={group.name}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 + i * 0.1 }}
                                 >
-                                    {link.name}
-                                </motion.a>
+                                    <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">{group.name}</h3>
+                                    <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+                                        {group.links.map((link) => (
+                                            <Link
+                                                key={link.name}
+                                                href={link.href}
+                                                onClick={() => setIsOpen(false)}
+                                                className="text-lg font-bold text-slate-900 hover:text-primary transition-colors flex items-center justify-between border-b border-slate-200 pb-2"
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </motion.div>
                             ))}
-                            <motion.a
-                                href="#contact"
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.6 }}
-                                onClick={() => setIsOpen(false)}
-                                className="mt-8 py-6 bg-brand-orange text-black rounded-3xl text-center font-black text-2xl flex items-center justify-center gap-3"
+                                transition={{ delay: 0.5 }}
+                                className="mt-8 flex flex-col gap-4 mb-8"
                             >
-                                Request Access
-                                <ArrowUpRight className="w-6 h-6" />
-                            </motion.a>
-                        </div>
-
-                        <div className="absolute bottom-10 left-10 flex flex-col gap-2">
-                            <span className="text-zinc-600 font-bold uppercase tracking-widest text-xs">Engineering Global Assets</span>
-                            <span className="text-zinc-400 font-bold text-sm">© 2026 Tiger Assets</span>
+                                <button className="w-full py-4 text-slate-600 bg-white border border-slate-200 rounded-2xl text-center font-bold text-lg">
+                                    Client Login
+                                </button>
+                                <Link onClick={() => setIsOpen(false)} href="/portfolio-review" className="w-full">
+                                    <button className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl text-center font-bold text-lg shadow-xl shadow-primary/20">
+                                        Request Portfolio Audit
+                                    </button>
+                                </Link>
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }
