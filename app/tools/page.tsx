@@ -37,11 +37,11 @@ export default function InvestmentTools() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
                         { title: "CAGR Calculator", desc: "Calculate the precise compound annual growth rate of your historical investments.", icon: "functions" },
-                        { title: "SIP Simulator", desc: "Model the impact of consistent, disciplined capital deployment over long periods.", icon: "history_toggle_off" },
+                        // title: "SIP Simulator", desc: "Model the impact of consistent, disciplined capital deployment over long periods.", icon: "history_toggle_off" },
                         { title: "Drawdown Analyzer", desc: "Visualize the time and return required to recover from massive capital loss.", icon: "warning" },
                         { title: "Portfolio Beta", desc: "Estimate the aggregate volatility of multiple holdings versus the benchmark.", icon: "compare_arrows" },
                         { title: "XIRR Calculator", desc: "Compute internal rate of return for portfolios with irregular cash flows.", icon: "calendar_month" },
-                        { title: "Retirement Corpus", desc: "Factor in inflation and withdrawal rates to determine target wealth thresholds.", icon: "elderly" }
+                        // title: "Retirement Corpus", desc: "Factor in inflation and withdrawal rates to determine target wealth thresholds.", icon: "elderly" }
                     ].map((tool, i) => (
                         <div key={i} className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between cursor-pointer">
                             <div>

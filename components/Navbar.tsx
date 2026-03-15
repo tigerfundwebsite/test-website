@@ -8,6 +8,15 @@ import Image from "next/image";
 
 const navGroups = [
     {
+        name: "Products",
+        links: [
+            { name: "SRE Tiger PMS", href: "/products/sre-tiger-pms" },
+            { name: "SME Advisory", href: "/products/sme-advisory" },
+            { name: "The HNI Model", href: "/products/hni-model" },
+            { name: "Fixed Income", href: "/products/fixed-income" },
+        ]
+    },
+    {
         name: "Approaches",
         links: [
             { name: "Portfolio", href: "/portfolio" },
