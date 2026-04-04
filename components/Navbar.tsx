@@ -31,7 +31,7 @@ const navGroups = [
             { name: "Insights", href: "/insights" },
             { name: "Market", href: "/market" },
             { name: "Tools", href: "/tools" },
-            { name: "Lab", href: "/lab" },
+            // { name: "Lab", href: "/lab" },
         ]
     },
     {

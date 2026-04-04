@@ -3,6 +3,7 @@ import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { SanityLive } from "@/sanity/lib/live";
+import CookieBanner from "@/components/CookieBanner";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <SanityLive />
+        <CookieBanner />
       </body>
     </html>
   );

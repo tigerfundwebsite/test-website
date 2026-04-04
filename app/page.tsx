@@ -7,7 +7,7 @@ import BlogsSection from "../components/BlogsSection";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import SectorOpportunities from "../components/SectorOpportunities";
-import InvestmentStats from "../components/InvestmentStats";
+// import InvestmentStats from "../components/InvestmentStats";
 import { Testimonials } from "../components/Testimonials";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <TigerFramework />
       <PMSSection />
-      <InvestmentStats />
+      {/* <InvestmentStats /> */}
       <FIPSection />
       <SectorOpportunities />
       <Testimonials />

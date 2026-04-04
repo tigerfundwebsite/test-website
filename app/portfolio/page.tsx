@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import InvestmentStats from "@/components/InvestmentStats";
+// import InvestmentStats from "@/components/InvestmentStats";
 
 export default function InteractivePortfolio() {
     return (
@@ -37,9 +37,9 @@ export default function InteractivePortfolio() {
             </section>
 
             {/* Reusing existing InvestmentStats for immediate value, to be upgraded with charts later */}
-            <div className="bg-slate-50 py-12">
+            {/* <div className="bg-slate-50 py-12">
                 <InvestmentStats />
-            </div>
+            </div> */}
 
             <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-16">
