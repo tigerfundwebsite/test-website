@@ -18,7 +18,7 @@ export default function TeamSection() {
                             <img alt="Portrait of Raghav Chaudhary, Founder of Tiger Assets" className="w-full h-auto object-cover aspect-square md:aspect-[4/5] object-top" src="/raghav.jpg" />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5 md:p-8 pt-12 md:pt-16">
                                 <p className="text-white font-serif italic text-lg md:text-2xl leading-snug">&quot;Our primary duty is the preservation of capital, followed by its consistent growth.&quot;</p>
-                                <p className="text-orange-200 text-xs md:text-sm mt-3 md:mt-4 font-bold tracking-wide uppercase">— Raghav Chaudhary, Founder</p>
+                                <p className="text-orange-200 text-xs md:text-sm mt-3 md:mt-4 font-bold tracking-wide uppercase"> Raghav Chaudhary, Founder</p>
                             </div>
                         </div>
                     </motion.div>

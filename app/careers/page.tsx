@@ -169,13 +169,14 @@ export default function Careers() {
                         className="space-y-4 md:space-y-6"
                     >
                         {[
-                            { role: "Equity Research Analyst", exp: "2-4 Years", type: "Full-Time", location: "Mumbai", icon: "monitoring" },
-                            { role: "Quantitative Strategist", exp: "3+ Years", type: "Full-Time", location: "Mumbai", icon: "functions" },
-                            { role: "Investor Relations Manager", exp: "5+ Years", type: "Full-Time", location: "Mumbai / Remote", icon: "handshake" },
+                            { role: "Equity Research Analyst", exp: "2-4 Years", type: "Full-Time", location: "Mumbai", icon: "monitoring", desc: "Conduct deep-dive fundamental research on mid and small cap equities to construct alpha-generating models and thesis.", applyLink: "mailto:careers@tigerassets.in?subject=Application%20for%20Equity%20Research%20Analyst" },
+                            { role: "Quantitative Strategist", exp: "3+ Years", type: "Full-Time", location: "Mumbai", icon: "functions", desc: "Design and implement robust risk-adjusted compounding strategies using advanced data-driven insights and quantitative metrics.", applyLink: "mailto:careers@tigerassets.in?subject=Application%20for%20Quantitative%20Strategist" },
+                            { role: "Investor Relations Manager", exp: "5+ Years", type: "Full-Time", location: "Mumbai / Remote", icon: "handshake", desc: "Manage high-trust relationships with UHNI clients while effectively communicating disciplined capital allocation strategies.", applyLink: "mailto:careers@tigerassets.in?subject=Application%20for%20Investor%20Relations%20Manager" },
                         ].map((job, i) => (
                             <motion.div
                                 key={i}
                                 variants={FADE_UP}
+                                onClick={() => window.location.href = job.applyLink}
                                 className="flex flex-col md:flex-row md:items-center justify-between p-6 md:p-8 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md rounded-2xl transition-all duration-300 cursor-pointer group hover:border-primary/30"
                             >
                                 <div className="flex items-start md:items-center gap-4 md:gap-6">
@@ -183,7 +184,8 @@ export default function Careers() {
                                         <span className="material-symbols-outlined text-[24px]">{job.icon}</span>
                                     </div>
                                     <div>
-                                        <h4 className="text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors">{job.role}</h4>
+                                        <h4 className="text-xl md:text-2xl font-bold text-slate-800 mb-2 group-hover:text-primary transition-colors">{job.role}</h4>
+                                        <p className="text-slate-600 font-medium text-sm md:text-base mb-4 max-w-2xl leading-relaxed">{job.desc}</p>
                                         <div className="flex flex-wrap items-center gap-3 md:gap-5 text-sm font-bold text-slate-500">
                                             <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[18px]">work</span> {job.exp}</span>
                                             <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[18px]">schedule</span> {job.type}</span>
@@ -191,7 +193,13 @@ export default function Careers() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-6 md:mt-0 flex shrink-0">
+                                <div className="mt-6 md:mt-0 flex shrink-0 items-center justify-between w-full md:w-auto gap-4">
+                                    <div className="md:hidden flex flex-wrap items-center gap-3 md:gap-5 text-xs sm:text-sm font-bold text-slate-500">
+                                        <a href={job.applyLink} onClick={(e) => e.stopPropagation()} className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all shadow-primary/20">Apply Here</a>
+                                    </div>
+                                    <div className="hidden md:flex items-center gap-4">
+                                        <a href={job.applyLink} onClick={(e) => e.stopPropagation()} className="bg-primary opacity-0 group-hover:opacity-100 group-hover:block hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-md transition-all shadow-primary/20 -translate-x-2 group-hover:translate-x-0">Apply Now</a>
+                                    </div>
                                     <span className="material-symbols-outlined text-slate-400 group-hover:text-primary group-hover:translate-x-1 transition-all md:text-[32px] bg-slate-50 group-hover:bg-orange-50 p-2 md:p-3 rounded-full">arrow_forward</span>
                                 </div>
                             </motion.div>

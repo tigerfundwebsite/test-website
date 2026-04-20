@@ -33,7 +33,7 @@ export default function Manifesto() {
                     Most market participants fail because they seek the thrill of returns before calculating the risk of ruin. We believe the first and most critical duty of a fund manager is not to make you rich quickly, but to ensure you are never poor permanently.
                 </p>
                 <p>
-                    Capital preservation is the foundation upon which the edifice of compounding is built. If a business lacks clean governance or a sustainable moat, it does not enter our portfolio—no matter the expected return.
+                    Capital preservation is the foundation upon which the edifice of compounding is built. If a business lacks clean governance or a sustainable moat, it does not enter our portfoliono matter the expected return.
                 </p>
 
                 <h2>II. Radical Conviction</h2>

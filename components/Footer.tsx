@@ -41,7 +41,6 @@ export default function Footer() {
                             <li><Link href="/products/sre-tiger-pms" className="hover:text-primary transition-colors">SRE Tiger PMS</Link></li>
                             <li><Link href="/products/sme-advisory" className="hover:text-primary transition-colors">SME Advisory</Link></li>
                             <li><Link href="/products/hni-model" className="hover:text-primary transition-colors">HNI Model</Link></li>
-                            <li><Link href="/products/fixed-income" className="hover:text-primary transition-colors">Fixed Income</Link></li>
                         </ul>
                     </div>
 
@@ -69,11 +68,11 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone size={18} className="text-primary shrink-0 mt-0.5" />
-                                <span>+91 22 6193 7300</span>
+                                <span>+91 90825 71009</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                                <span>2nd Floor, Cama Building, Dalal Street, Fort, Mumbai 400 001</span>
+                                <span>A-55, Giriraj Inds Estate, Mahakali Caves Road, Gundavali, Andheri East, Mumbai - 400093</span>
                             </li>
                         </ul>
                     </div>
@@ -81,7 +80,7 @@ export default function Footer() {
 
                 <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs mt-12">
                     <p>
-                        Regulated by the Securities and Exchange Board of India (SEBI). Registration No: INP000005795
+                        Regulated by the Securities and Exchange Board of India (SEBI). Registration No: <a href="https://enit.nseindia.com/MemDirWeb/brokerDetailPage_Beta?memID=281&h_MemType=members" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">INP000005795</a>
                     </p>
                     <p>&copy; {new Date().getFullYear()} Tiger Assets Advisory Private Limited. All rights reserved.</p>
                 </div>

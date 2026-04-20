@@ -5,8 +5,7 @@ import { useState } from "react";
 export default function FIPSection() {
     // 30% default fund return (matching example row 1)
     const [investmentAmount, setInvestmentAmount] = useState<number>(10000000);
-    const [portfolioReturn, setPortfolioReturn] = useState<number>(30);
-    const [benchmarkReturn, setBenchmarkReturn] = useState<number>(20);
+    const [portfolioReturn, setPortfolioReturn] = useState<number>(18);
 
     // Formatter for Indian Rupees
     const formatINR = (value: number) => {
@@ -33,28 +32,19 @@ export default function FIPSection() {
     const totalReturnAmount = investmentAmount * (portfolioReturn / 100);
     const endingGrossValue = investmentAmount + totalReturnAmount;
 
-    // SRE Tiger Fee Calculation
-    let tigerFixedFeeRate = 0;
-    let tigerFulcrumFeeRate = 0;
-
-    if (investmentAmount < 10000000) {
-        tigerFixedFeeRate = 0.015;
-        tigerFulcrumFeeRate = 0.35;
-    } else if (investmentAmount < 50000000) {
-        tigerFixedFeeRate = 0.015;
-        tigerFulcrumFeeRate = 0.25;
-    } else {
-        tigerFixedFeeRate = 0.01;
-        tigerFulcrumFeeRate = 0.20;
-    }
+    // SRE Tiger Fee Calculation (from SRE PDF Structure)
+    const tigerFixedFeeRate = 0;
+    const tigerPerformanceRate = 0.15;
+    const tigerHurdleRate = 0.075;
 
     const tigerFixedFee = investmentAmount * tigerFixedFeeRate;
     const tigerPostFixedReturnAmount = totalReturnAmount - tigerFixedFee;
-    const benchmarkReturnAmount = investmentAmount * (benchmarkReturn / 100);
+    
+    const tigerHurdleAmount = investmentAmount * tigerHurdleRate;
 
-    // Alpha is the excess return above benchmark AFTER fixed fees
-    const alphaAmount = Math.max(0, tigerPostFixedReturnAmount - benchmarkReturnAmount);
-    const tigerFulcrumFee = alphaAmount * tigerFulcrumFeeRate;
+    // Alpha is the excess return above the 7.5% fixed hurdle
+    const alphaAmount = Math.max(0, tigerPostFixedReturnAmount - tigerHurdleAmount);
+    const tigerFulcrumFee = alphaAmount * tigerPerformanceRate;
     const tigerTotalFee = tigerFixedFee + tigerFulcrumFee;
     const tigerNetReturn = totalReturnAmount - tigerTotalFee;
     const endingNetValueTiger = investmentAmount + tigerNetReturn;
@@ -93,20 +83,20 @@ export default function FIPSection() {
         },
         {
             label: "Index Return / Hurdle",
-            tigerValue: `BSE 500 TRI (${benchmarkReturn}%)`,
+            tigerValue: `7.5% Hurdle`,
             indValue: "8% Hurdle",
         },
         {
             label: "Fixed Fees",
             tigerValue: formatINR(tigerFixedFee),
-            tigerSubtext: `(${tigerFixedFeeRate * 100}%)`,
+            tigerSubtext: `(Nil)`,
             indValue: formatINR(indFixedFee),
             indSubtext: `(${indFixedFeeRate * 100}%)`,
         },
         {
             label: "Performance / Fulcrum Fee",
             tigerValue: formatINR(tigerFulcrumFee),
-            tigerSubtext: `(${tigerFulcrumFeeRate * 100}% on Alpha)`,
+            tigerSubtext: `(${tigerPerformanceRate * 100}% on Alpha)`,
             indValue: formatINR(indPerformanceFee),
             indSubtext: `(${indPerformanceRate * 100}% above 8%)`,
             highlightTiger: true,
@@ -137,7 +127,7 @@ export default function FIPSection() {
                         Fees Based on True Alpha
                     </h2>
                     <p className="text-lg text-slate-600 mt-6 max-w-2xl mx-auto font-medium leading-relaxed">
-                        Clients pay fees only on returns exceeding the benchmark return (BSE 500 TRI), ensuring fees are tied to genuine outperformance, not average market moves.
+                        We charge zero fixed fees. You only pay a 15% performance fee when your returns exceed our strict 7.5% hurdle rate. Meaning we win only when you win.
                     </p>
                 </div>
 
@@ -207,29 +197,7 @@ export default function FIPSection() {
                                 </div>
                             </div>
 
-                            {/* Index Return Rate Slider */}
-                            <div>
-                                <div className="flex justify-between items-end mb-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-slate-600">Index Return</label>
-                                    <div>
-                                        <span className="text-slate-500 text-sm block mb-1">Nifty 50 TRI</span>
-                                        <span className="text-sm font-bold text-slate-600">{benchmarkReturn}%</span>
-                                    </div>
-                                </div>
-                                <input
-                                    type="range"
-                                    min="5"
-                                    max="50"
-                                    step="1"
-                                    value={benchmarkReturn}
-                                    onChange={(e) => setBenchmarkReturn(Number(e.target.value))}
-                                    className="w-full h-2 bg-slate-100 rounded-full appearance-none cursor-pointer accent-primary"
-                                />
-                                <div className="flex justify-between mt-1 text-[10px] text-slate-400 font-medium tracking-wide">
-                                    <span>5%</span>
-                                    <span>50%</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 

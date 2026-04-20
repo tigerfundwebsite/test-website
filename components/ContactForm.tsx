@@ -28,7 +28,7 @@ export default function ContactForm() {
                                 </div>
                                 <div>
                                     <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Direct Line</div>
-                                    <div className="text-lg font-bold text-slate-900">+91 Mumbai Office</div>
+                                    <div className="text-lg font-bold text-slate-900">+91 90825 71009</div>
                                 </div>
                             </div>
 
@@ -47,8 +47,7 @@ export default function ContactForm() {
                                     <MapPin className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Presence</div>
-                                    <div className="text-lg font-bold text-slate-900">Borivali (East), Mumbai</div>
+                                    <div className="text-lg font-bold text-slate-900">Andheri East, Mumbai</div>
                                 </div>
                             </div>
                         </div>

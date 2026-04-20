@@ -48,11 +48,11 @@ export default function BetaTool() {
                 <span className={`text-sm font-bold ${Math.abs(totalWeight - 100) < 0.1 ? "text-green-600" : "text-amber-600"}`}>Total Weight: {fmt(totalWeight, 1)}%</span>
             </div>
             <div className="grid sm:grid-cols-3 gap-4 mt-2">
-                <ResultCard label="Portfolio Beta" value={portfolioBeta !== null ? fmt(portfolioBeta) : "—"} highlight />
-                <ResultCard label="Market Sensitivity" value={portfolioBeta !== null ? `${fmt(portfolioBeta * 100 - 100, 1)}% vs Nifty` : "—"} />
+                <ResultCard label="Portfolio Beta" value={portfolioBeta !== null ? fmt(portfolioBeta) : ""} highlight />
+                <ResultCard label="Market Sensitivity" value={portfolioBeta !== null ? `${fmt(portfolioBeta * 100 - 100, 1)}% vs Nifty` : ""} />
                 <div className="rounded-2xl p-5 bg-slate-50 border border-slate-200 flex flex-col gap-1">
                     <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Classification</span>
-                    <span className="text-base font-bold text-slate-800 leading-snug">{betaDesc || "—"}</span>
+                    <span className="text-base font-bold text-slate-800 leading-snug">{betaDesc || ""}</span>
                 </div>
             </div>
         </div>

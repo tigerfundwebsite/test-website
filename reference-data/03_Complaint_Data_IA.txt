@@ -7,7 +7,7 @@ ADVISORY
 IA DISCLOSURE DOC 3 OF 5
 
 Investor Complaint Data
-Investment Adviser — Monthly Disclosure (SEBI Format)
+Investment Adviser  Monthly Disclosure (SEBI Format)
 
 Entity: Tiger Assets Advisory Private Limited
 Registration Type: SEBI Registered Investment Adviser
@@ -126,7 +126,7 @@ GRAND TOTAL
 ^ Average Resolution Time = Sum of days taken to resolve each complaint in the current month ÷ Total complaints resolved
 in the current month.
 
-ANNUAL COMPLAINT SUMMARY — PREVIOUS 12 MONTHS
+ANNUAL COMPLAINT SUMMARY  PREVIOUS 12 MONTHS
 Month
 
 Opening
@@ -149,7 +149,7 @@ Apr [YY]
 
 0
 
-—
+
 
 May [YY]
 
@@ -161,7 +161,7 @@ May [YY]
 
 0
 
-—
+
 
 Jun [YY]
 
@@ -173,7 +173,7 @@ Jun [YY]
 
 0
 
-—
+
 
 Jul [YY]
 
@@ -185,7 +185,7 @@ Jul [YY]
 
 0
 
-—
+
 
 Aug [YY]
 
@@ -197,7 +197,7 @@ Aug [YY]
 
 0
 
-—
+
 
 Sep [YY]
 
@@ -209,7 +209,7 @@ Sep [YY]
 
 0
 
-—
+
 
 Oct [YY]
 
@@ -221,7 +221,7 @@ Oct [YY]
 
 0
 
-—
+
 
 Nov [YY]
 
@@ -233,7 +233,7 @@ Nov [YY]
 
 0
 
-—
+
 
 Dec [YY]
 
@@ -245,7 +245,7 @@ Dec [YY]
 
 0
 
-—
+
 
 Tiger Assets Advisory Private Limited | SEBI Registered Investment Adviser
 For Website Publication | Regulatory Disclosure Document
@@ -266,7 +266,7 @@ Jan [YY]
 
 0
 
-—
+
 
 Feb [YY]
 
@@ -278,7 +278,7 @@ Feb [YY]
 
 0
 
-—
+
 
 Mar [YY]
 
@@ -290,7 +290,7 @@ Mar [YY]
 
 0
 
-—
+
 
 Tiger Assets shall endeavour to resolve investor complaints fairly and promptly in accordance with applicable SEBI
 regulations. If unresolved, investors may escalate to SEBI SCORES (scores.sebi.gov.in) or use the SMART ODR

@@ -7,7 +7,7 @@ ADVISORY
 IA DISCLOSURE DOC 2 OF 5
 
 Investor Charter
-Investment Adviser — SEBI Prescribed Disclosure
+Investment Adviser  SEBI Prescribed Disclosure
 
 Entity: Tiger Assets Advisory Private Limited
 Registration Type: SEBI Registered Investment Adviser
@@ -127,7 +127,7 @@ E. RIGHTS OF INVESTORS
 ✔ Confidential treatment of personal and financial information, subject to law.
 ✔ Timely response to service requests and grievances.
 ✔ Access to grievance redressal mechanisms including SCORES and ODR as applicable.
-✔ Receive all documents — agreement, fee disclosures, risk profiles — before service commencement.
+✔ Receive all documents  agreement, fee disclosures, risk profiles  before service commencement.
 
 F. RESPONSIBILITIES OF INVESTORS
 ■ Read all relevant documents carefully before availing services or acting on advice.

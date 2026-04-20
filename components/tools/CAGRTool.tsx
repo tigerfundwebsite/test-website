@@ -18,9 +18,9 @@ export default function CAGRTool() {
                 <Field label="Investment Period" value={years} onChange={setYears} suffix="Years" min="1" max="50" step="0.5" />
             </div>
             <div className="flex flex-col gap-4 justify-center">
-                <ResultCard label="CAGR" value={cagr !== null ? `${fmt(cagr)}%` : "—"} highlight />
-                <ResultCard label="Absolute Return" value={abs !== null ? `${fmt(abs)}%` : "—"} />
-                <ResultCard label="Total Gain" value={iv > 0 && fv > 0 ? fmtCrore(fv - iv) : "—"} />
+                <ResultCard label="CAGR" value={cagr !== null ? `${fmt(cagr)}%` : ""} highlight />
+                <ResultCard label="Absolute Return" value={abs !== null ? `${fmt(abs)}%` : ""} />
+                <ResultCard label="Total Gain" value={iv > 0 && fv > 0 ? fmtCrore(fv - iv) : ""} />
                 <p className="text-xs text-slate-400 italic">CAGR = (Final / Initial)^(1/Years) − 1</p>
             </div>
         </div>

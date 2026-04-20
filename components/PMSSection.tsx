@@ -17,56 +17,56 @@ export default function PMSSection() {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all">
-                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:bg-primary transition-all duration-300 cursor-default">
+                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
                                 <span className="material-symbols-outlined text-[28px]">anchor</span>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Core Portfolio</h3>
-                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium">
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-white transition-colors">Core Portfolio</h3>
+                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium group-hover:text-orange-50 transition-colors">
                                 Stable, high-quality businesses with predictable cash flows. These compounders form the bedrock of the portfolio, ensuring stability during volatility.
                             </p>
                             <ul className="space-y-2">
-                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                                    <span className="size-1.5 rounded-full bg-emerald"></span> Large Cap Bias
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide group-hover:text-orange-100 transition-colors">
+                                    <span className="size-1.5 rounded-full bg-emerald group-hover:bg-white"></span> Large Cap Bias
                                 </li>
-                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                                    <span className="size-1.5 rounded-full bg-emerald"></span> Low Beta
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide group-hover:text-orange-100 transition-colors">
+                                    <span className="size-1.5 rounded-full bg-emerald group-hover:bg-white"></span> Low Beta
                                 </li>
                             </ul>
                         </motion.div>
 
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all relative z-10 ring-2 ring-orange-100 md:-translate-y-4">
-                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:bg-primary transition-all duration-300 relative z-10 ring-2 ring-orange-100 md:-translate-y-4 hover:-translate-y-6 cursor-default">
+                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
                                 <span className="material-symbols-outlined text-[28px]">rocket_launch</span>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Catalyst Plays</h3>
-                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium">
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-white transition-colors">Catalyst Plays</h3>
+                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium group-hover:text-orange-50 transition-colors">
                                 Companies undergoing special situations: demergers, management change, or cyclical upturns. These provide the &apos;alpha&apos; kicker to returns.
                             </p>
                             <ul className="space-y-2">
-                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                                    <span className="size-1.5 rounded-full bg-primary"></span> Mid &amp; Small Cap
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide group-hover:text-orange-100 transition-colors">
+                                    <span className="size-1.5 rounded-full bg-primary group-hover:bg-white"></span> Mid &amp; Small Cap
                                 </li>
-                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                                    <span className="size-1.5 rounded-full bg-primary"></span> High Growth
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide group-hover:text-orange-100 transition-colors">
+                                    <span className="size-1.5 rounded-full bg-primary group-hover:bg-white"></span> High Growth
                                 </li>
                             </ul>
                         </motion.div>
 
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all">
-                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:bg-primary transition-all duration-300 cursor-default">
+                            <div className="size-14 rounded-xl bg-orange-50 text-primary flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
                                 <span className="material-symbols-outlined text-[28px]">shield</span>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Capital Protection</h3>
-                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium">
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-white transition-colors">Capital Protection</h3>
+                            <p className="text-slate-600 text-base leading-relaxed mb-8 font-medium group-hover:text-orange-50 transition-colors">
                                 A rigorous exit framework prevents emotional decision making. We are quick to cut losses when the investment thesis breaks.
                             </p>
                             <ul className="space-y-2">
-                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                                    <span className="size-1.5 rounded-full bg-slate-700"></span> Stop Loss Protocols
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide group-hover:text-orange-100 transition-colors">
+                                    <span className="size-1.5 rounded-full bg-slate-700 group-hover:bg-white"></span> Stop Loss Protocols
                                 </li>
-                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
-                                    <span className="size-1.5 rounded-full bg-slate-700"></span> Cash Calls
+                                <li className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide group-hover:text-orange-100 transition-colors">
+                                    <span className="size-1.5 rounded-full bg-slate-700 group-hover:bg-white"></span> Cash Calls
                                 </li>
                             </ul>
                         </motion.div>
@@ -130,21 +130,21 @@ export default function PMSSection() {
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-2 gap-4 pt-4">
-                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Market Cap Bias</p>
-                                            <p className="font-bold text-xl text-slate-900">Multi-Cap</p>
+                                        <div className="group bg-slate-50 p-5 rounded-xl border border-slate-200 hover:bg-primary hover:border-primary transition-all duration-300 cursor-default">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 group-hover:text-orange-100 transition-colors">Market Cap Bias</p>
+                                            <p className="font-bold text-xl text-slate-900 group-hover:text-white transition-colors">Multi-Cap</p>
                                         </div>
-                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Benchmark</p>
-                                            <p className="font-bold text-xl text-slate-900">BSE 500</p>
+                                        <div className="group bg-slate-50 p-5 rounded-xl border border-slate-200 hover:bg-primary hover:border-primary transition-all duration-300 cursor-default">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 group-hover:text-orange-100 transition-colors">Benchmark</p>
+                                            <p className="font-bold text-xl text-slate-900 group-hover:text-white transition-colors">BSE 500</p>
                                         </div>
-                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Strategy</p>
-                                            <p className="font-bold text-xl text-slate-900">Long Only</p>
+                                        <div className="group bg-slate-50 p-5 rounded-xl border border-slate-200 hover:bg-primary hover:border-primary transition-all duration-300 cursor-default">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 group-hover:text-orange-100 transition-colors">Strategy</p>
+                                            <p className="font-bold text-xl text-slate-900 group-hover:text-white transition-colors">Long Only</p>
                                         </div>
-                                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Min Investment</p>
-                                            <p className="font-bold text-xl text-slate-900">₹ 50 Lakhs</p>
+                                        <div className="group bg-slate-50 p-5 rounded-xl border border-slate-200 hover:bg-primary hover:border-primary transition-all duration-300 cursor-default">
+                                            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 group-hover:text-orange-100 transition-colors">Min Investment</p>
+                                            <p className="font-bold text-xl text-slate-900 group-hover:text-white transition-colors">₹ 50 Lakhs</p>
                                         </div>
                                     </div>
                                 </div>

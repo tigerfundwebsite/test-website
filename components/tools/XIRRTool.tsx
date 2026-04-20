@@ -66,9 +66,9 @@ export default function XIRRTool() {
             </div>
             <button onClick={addCF} className="flex items-center gap-2 text-sm font-bold text-primary border border-primary/30 bg-orange-50 hover:bg-orange-100 px-4 py-2 rounded-xl transition-colors w-fit"><span className="material-symbols-outlined text-[18px]">add</span>Add Cash Flow</button>
             <div className="grid sm:grid-cols-3 gap-4 mt-2">
-                <ResultCard label="XIRR" value={xirr !== null && isFinite(xirr) ? `${fmt(xirr * 100)}%` : "—"} highlight />
-                <ResultCard label="Total Invested" value={totalInvested > 0 ? fmtCrore(totalInvested) : "—"} />
-                <ResultCard label="Total Returned" value={totalReturned > 0 ? fmtCrore(totalReturned) : "—"} />
+                <ResultCard label="XIRR" value={xirr !== null && isFinite(xirr) ? `${fmt(xirr * 100)}%` : ""} highlight />
+                <ResultCard label="Total Invested" value={totalInvested > 0 ? fmtCrore(totalInvested) : ""} />
+                <ResultCard label="Total Returned" value={totalReturned > 0 ? fmtCrore(totalReturned) : ""} />
             </div>
             <p className="text-xs text-slate-400 italic">Enter negative values for outflows (purchases) and positive for inflows (redemptions).</p>
         </div>

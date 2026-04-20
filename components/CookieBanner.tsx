@@ -32,7 +32,7 @@ export default function CookieBanner() {
                 onDecline={handleDecline}
                 enableDeclineButton
             >
-                {/* intentionally empty — UI is custom below */}
+                {/* intentionally empty  UI is custom below */}
             </CookieConsent>
 
             <AnimatePresence mode="wait">
@@ -118,7 +118,7 @@ export default function CookieBanner() {
                                             Decline
                                         </button>
                                     </div>
-                                    
+
                                     <button
                                         onClick={() => setShowDetails((p) => !p)}
                                         id="cookie-details-btn"

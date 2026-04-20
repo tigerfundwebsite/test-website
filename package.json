@@ -21,6 +21,7 @@
     "react": "19.2.3",
     "react-cookie-consent": "^10.0.1",
     "react-dom": "19.2.3",
+    "react-twitter-embed": "^4.0.4",
     "sanity": "^4.22.0",
     "styled-components": "^6.3.11",
     "tailwind-merge": "^3.4.0"

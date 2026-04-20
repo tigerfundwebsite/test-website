@@ -25,7 +25,7 @@ export default function PortfolioReviewPage() {
                         </span>
                     </h1>
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        Are your investments truly working for you? Upload your current demat holdings or Excel trackers, and our top-tier analysts will break down your hidden fees, risk exposure, and missed alpha—completely free, with zero obligation.
+                        Are your investments truly working for you? Upload your current demat holdings or Excel trackers, and our top-tier analysts will break down your hidden fees, risk exposure, and missed alphacompletely free, with zero obligation.
                     </p>
                 </div>
 

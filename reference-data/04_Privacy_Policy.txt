@@ -58,7 +58,7 @@ We process your personal data only for lawful purposes, including:
 4. CONSENT AND LEGAL BASIS
 Where required under applicable law, Tiger Assets will seek your prior explicit consent before processing your
 personal data. Our consent process includes providing clear notice describing: (a) the personal data collected, (b)
-the purpose of processing, (c) how you may exercise your rights, and (d) how you may raise a complaint — as
+the purpose of processing, (c) how you may exercise your rights, and (d) how you may raise a complaint  as
 required under the Digital Personal Data Protection Act, 2023 (DPDP Act). You may withdraw consent at any time,
 subject to legal retention requirements.
 

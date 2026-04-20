@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type ProductTheme = 'pms' | 'sme' | 'hni' | 'fixed-income';
+export type ProductTheme = 'pms' | 'sme' | 'hni';
 
 export interface ProductFeature {
     title: string;
@@ -58,7 +58,7 @@ export const products: ProductDetails[] = [
             },
             {
                 title: "Transparent & Aligned Fees",
-                description: "Fair Fulcrum Fee structure—pay only for performance exceeding the benchmark.",
+                description: "Fair Fulcrum Fee structurepay only for performance exceeding the benchmark.",
                 icon: "handshake"
             }
         ]
@@ -122,37 +122,6 @@ export const products: ProductDetails[] = [
                 title: "Quarterly Positioning",
                 description: "In-depth analysis and tracking of quarterly results to identify high-gain opportunities.",
                 icon: "finance"
-            }
-        ]
-    },
-    {
-        id: "fixed-income",
-        name: "Fixed Income Product",
-        slug: "fixed-income",
-        theme: "fixed-income",
-        shortDescription: "Stable, predictable returns through meticulously selected fixed-income instruments. Details coming soon.",
-        fullDescription: "We are expanding our offerings to include dedicated Fixed Income products designed for capital preservation and steady yield generation. Stay tuned for complete product details and investment criteria.",
-        highlights: [
-            "Capital Preservation Focus",
-            "Steady Yield Generation",
-            "Curated Debt Instruments",
-            "Diversified Risk"
-        ],
-        features: [
-            {
-                title: "Stable Returns",
-                description: "Consistent yield generation designed to balance against equity market volatilities.",
-                icon: "account_balance"
-            },
-            {
-                title: "Risk Averse",
-                description: "Investments evaluated heavily for credit safety and capital protection.",
-                icon: "security"
-            },
-            {
-                title: "Coming Soon",
-                description: "Full details and prospectus are currently being finalized.",
-                icon: "hourglass_bottom"
             }
         ]
     }

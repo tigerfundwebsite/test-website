@@ -127,7 +127,7 @@ opaque governance,and follow an explicit sell discipline so that risk is acted o
 Played out: the thesis or valuation has run its course → we exit or trim.​
 When a stock moves from “undervalued with triggers ahead” to “fully valued with limited upside,” we start taking money off the table.​
 Example: if we buy a niche engineering company at 12–13x earnings with a strong orderbook, and over 18–24 months earnings double and the stock re-rates to
-28–30x, we typically trim or exit even if the business remains good—the upside from there rarely compensates for the downside if anything goes wrong.​
+28–30x, we typically trim or exit even if the business remains goodthe upside from there rarely compensates for the downside if anything goes wrong.​
 Broken: governance or balance sheet deteriorates → we exit quickly.​
 We track auditor changes, pledging, working-capital stretch and related-party transactions. If the facts change, we don’t “average down,” we walk away.​
 Example: in the past we have exited a mid-cap where receivable days spiked and management started guiding aggressively while cash flows lagged; the stock
@@ -801,7 +801,7 @@ Email
 admintiger@sre.co.in
 Call us
 
-+91 83692 20950 / 90825 71009
++91 90825 71009
 
 Disclaimer
 SRE TIGER FUND is a SEBI-registered Portfolio Manager with SEBI Registration Number INP000005795.

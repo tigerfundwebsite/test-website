@@ -4,6 +4,7 @@ import FIPSection from "../components/FIPSection";
 import TigerFramework from "../components/TigerFramework";
 import TeamSection from "../components/TeamSection";
 import BlogsSection from "../components/BlogsSection";
+import HomeSocialConnect from "../components/HomeSocialConnect";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import SectorOpportunities from "../components/SectorOpportunities";
@@ -21,6 +22,7 @@ export default function Home() {
       <SectorOpportunities />
       <Testimonials />
       <TeamSection />
+      <HomeSocialConnect />
       <BlogsSection />
       <ContactForm />
       <Footer />

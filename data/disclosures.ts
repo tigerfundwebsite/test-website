@@ -72,7 +72,7 @@ We process your personal data only for lawful purposes, including:
 • Detecting unauthorized access, misuse, cyber threats, or suspicious activity.
 
 4. CONSENT AND LEGAL BASIS
-Where required under applicable law, Tiger Assets will seek your prior explicit consent before processing your personal data. Our consent process includes providing clear notice describing: (a) the personal data collected, (b) the purpose of processing, (c) how you may exercise your rights, and (d) how you may raise a complaint — as required under the Digital Personal Data Protection Act, 2023 (DPDP Act). You may withdraw consent at any time, subject to legal retention requirements.
+Where required under applicable law, Tiger Assets will seek your prior explicit consent before processing your personal data. Our consent process includes providing clear notice describing: (a) the personal data collected, (b) the purpose of processing, (c) how you may exercise your rights, and (d) how you may raise a complaint  as required under the Digital Personal Data Protection Act, 2023 (DPDP Act). You may withdraw consent at any time, subject to legal retention requirements.
 
 5. SHARING OF PERSONAL DATA
 Tiger Assets shares personal data only on a strict need-to-know basis and only where appropriate. Sharing may occur with:
@@ -149,7 +149,7 @@ E. RIGHTS OF INVESTORS
 ✔ Confidential treatment of personal and financial information, subject to law.
 ✔ Timely response to service requests and grievances.
 ✔ Access to grievance redressal mechanisms including SCORES and ODR as applicable.
-✔ Receive all documents — agreement, fee disclosures, risk profiles — before service commencement.
+✔ Receive all documents  agreement, fee disclosures, risk profiles  before service commencement.
 
 F. RESPONSIBILITIES OF INVESTORS
 ■ Read all relevant documents carefully before availing services or acting on advice.
@@ -242,12 +242,12 @@ If you remain dissatisfied after Level 2 response, escalate to the Principal Off
 Response Time: Within 5 working days
 Resolution Target: Within 30 days from date of original complaint
 
-LEVEL 4 — SEBI SCORES (External Escalation)
+LEVEL 4  SEBI SCORES (External Escalation)
 If your complaint is not resolved satisfactorily after exhausting Tiger Assets' internal escalation process, you may lodge a grievance on SEBI's online complaint redressal platform:
 SCORES Platform: www.scores.sebi.gov.in
 SEBI Toll-Free: 1800 22 7575 / 1800 266 7575
 
-LEVEL 5 — SMART ODR (Online Dispute Resolution)
+LEVEL 5  SMART ODR (Online Dispute Resolution)
 Where applicable, disputes in the securities market may also be resolved through SEBI's SMART ODR mechanism for online conciliation and arbitration. SEBI's grievance framework links SCORES with the ODR system.
 SMART ODR Portal: www.smartodr.in
 Process: Online Conciliation → Arbitration (if conciliation fails)

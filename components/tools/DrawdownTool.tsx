@@ -20,7 +20,7 @@ export default function DrawdownTool() {
                 <Field label="Expected Recovery CAGR" value={cagr} onChange={setCagr} suffix="%" min="1" max="50" step="0.5" />
                 <div className="rounded-2xl bg-red-50 border border-red-100 p-4">
                     <p className="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">Key Insight</p>
-                    <p className="text-sm text-red-700 font-medium">A {dd}% fall requires a <strong>{requiredReturn !== null ? fmt(requiredReturn) : "—"}%</strong> gain just to break even. Recovery is asymmetric.</p>
+                    <p className="text-sm text-red-700 font-medium">A {dd}% fall requires a <strong>{requiredReturn !== null ? fmt(requiredReturn) : ""}%</strong> gain just to break even. Recovery is asymmetric.</p>
                 </div>
                 {milestones.length > 0 && (
                     <div className="flex flex-col gap-2">
@@ -37,8 +37,8 @@ export default function DrawdownTool() {
                 )}
             </div>
             <div className="flex flex-col gap-4 justify-center">
-                <ResultCard label="Required Return to Break Even" value={requiredReturn !== null ? `${fmt(requiredReturn)}%` : "—"} highlight />
-                <ResultCard label="Recovery Time (at CAGR)" value={recoveryYears !== null ? `${fmt(recoveryYears, 1)} Years` : "—"} />
+                <ResultCard label="Required Return to Break Even" value={requiredReturn !== null ? `${fmt(requiredReturn)}%` : ""} highlight />
+                <ResultCard label="Recovery Time (at CAGR)" value={recoveryYears !== null ? `${fmt(recoveryYears, 1)} Years` : ""} />
                 <ResultCard label="Portfolio Left" value={`${fmt(100 - dd, 0)}%`} />
             </div>
         </div>

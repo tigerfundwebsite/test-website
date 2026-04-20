@@ -13,7 +13,6 @@ const navGroups = [
             { name: "SRE Tiger PMS", href: "/products/sre-tiger-pms" },
             { name: "SME Advisory", href: "/products/sme-advisory" },
             { name: "The HNI Model", href: "/products/hni-model" },
-            { name: "Fixed Income", href: "/products/fixed-income" },
         ]
     },
     {
@@ -21,7 +20,6 @@ const navGroups = [
         links: [
             { name: "Portfolio", href: "/portfolio" },
             { name: "Framework", href: "/framework" },
-            { name: "Strategy", href: "/strategy" },
             { name: "Case Studies", href: "/case-studies" },
         ]
     },
@@ -39,7 +37,6 @@ const navGroups = [
         links: [
             { name: "Manifesto", href: "/manifesto" },
             { name: "Letters", href: "/letters" },
-            { name: "History", href: "/the-market-journey" },
             { name: "Careers", href: "/careers" },
         ]
     },
@@ -50,7 +47,6 @@ const navGroups = [
             { name: "Media", href: "/media" },
             { name: "Learn", href: "/learn" },
             { name: "Resources", href: "/resources" },
-            { name: "Journey", href: "/journey" },
         ]
     }
 ];

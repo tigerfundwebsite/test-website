@@ -36,7 +36,6 @@ export default function Resources() {
             <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                        { title: "Onboarding Guide", desc: "Step-by-step PDF detailing the KYC and account opening process.", icon: "person_add" },
                         { title: "Fee Structure", desc: "Transparent breakdown of our performance hurdle rates and fixed fees.", icon: "account_balance_wallet" },
                         { title: "Disclosure Document", desc: "Current SEBI mandated disclosure document for Portfolio Managers.", icon: "description" },
                         { title: "Taxation Primer", desc: "Overview of capital gains taxation for PMS investors in India.", icon: "request_quote" },

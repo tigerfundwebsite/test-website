@@ -131,7 +131,7 @@ Page 2
 
 IA Escalation Matrix
 
-LEVEL 4 — SEBI SCORES (External Escalation)
+LEVEL 4  SEBI SCORES (External Escalation)
 If your complaint is not resolved satisfactorily after exhausting Tiger Assets' internal escalation process, you may
 lodge a grievance on SEBI's online complaint redressal platform:
 SCORES Platform
@@ -147,7 +147,7 @@ SEBI Head Office
 SEBI Bhavan, Plot No. C4-A, 'G' Block, Bandra Kurla Complex, Mumbai 400
 051
 
-LEVEL 5 — SMART ODR (Online Dispute Resolution)
+LEVEL 5  SMART ODR (Online Dispute Resolution)
 Where applicable, disputes in the securities market may also be resolved through SEBI's SMART ODR
 mechanism for online conciliation and arbitration. SEBI's grievance framework links SCORES with the ODR
 system, providing investors with an efficient, technology-enabled alternative dispute resolution process.
